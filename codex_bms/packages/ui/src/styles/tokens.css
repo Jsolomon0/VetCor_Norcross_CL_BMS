@@ -1,0 +1,27 @@
+:root {
+  --bms-font-body: "Segoe UI Variable", "Aptos", "Trebuchet MS", sans-serif;
+  --bms-font-display: "Georgia", "Iowan Old Style", "Palatino Linotype", serif;
+  --bms-color-bg: #f4efe6;
+  --bms-color-surface: #fffdf8;
+  --bms-color-surface-strong: #172126;
+  --bms-color-surface-muted: #efe6d7;
+  --bms-color-border: #d3c6b2;
+  --bms-color-text: #1f2933;
+  --bms-color-text-muted: #5f6c76;
+  --bms-color-accent: #0f766e;
+  --bms-color-accent-strong: #115e59;
+  --bms-color-accent-soft: #ccfbf1;
+  --bms-color-warn: #c2410c;
+  --bms-color-warn-soft: #ffedd5;
+  --bms-color-success: #166534;
+  --bms-color-success-soft: #dcfce7;
+  --bms-color-info: #1d4ed8;
+  --bms-color-info-soft: #dbeafe;
+  --bms-shadow-soft: 0 18px 50px rgba(23, 33, 38, 0.08);
+  --bms-shadow-card: 0 10px 28px rgba(23, 33, 38, 0.08);
+  --bms-radius-xl: 24px;
+  --bms-radius-lg: 18px;
+  --bms-radius-md: 14px;
+  --bms-radius-sm: 10px;
+  --bms-shell-sidebar-width: 280px;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "bms-auth-foundation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test --test-isolation=none",
+    "test:watch": "node --experimental-strip-types --test --test-isolation=none --watch"
+  }
+}

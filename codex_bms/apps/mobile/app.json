@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "BMS Mobile",
+    "slug": "bms-mobile",
+    "scheme": "bms",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
