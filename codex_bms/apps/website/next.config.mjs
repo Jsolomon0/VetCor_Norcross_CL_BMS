@@ -8,7 +8,13 @@ const nextConfig = {
   experimental: {
     externalDir: true
   },
-  outputFileTracingRoot: path.join(__dirname, "../../")
+  outputFileTracingRoot: path.join(__dirname, "../../"),
+  outputFileTracingIncludes: {
+    "/*": [
+      "../../node_modules/next/dist/compiled/next-server/server.runtime.prod.js",
+      "../../node_modules/next/dist/compiled/next-server/server.runtime.prod.js.map"
+    ]
+  }
 };
 
 export default nextConfig;

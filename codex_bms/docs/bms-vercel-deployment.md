@@ -15,6 +15,15 @@ Each app now contains its own:
 - `tsconfig.json`
 - `next-env.d.ts`
 
+Vercel project settings for each Next.js app should stay on the standard framework path:
+
+- `Framework Preset`: `Next.js`
+- `Root Directory`: the app directory for that project, for example `codex_bms/apps/website`
+- `Build Command`: leave the default Next.js behavior in place, or use `npm run build`
+- `Output Directory`: leave this empty or unset
+
+Do not set `Output Directory` to `public`. That setting is for static sites and will cause Vercel to fail after a successful Next.js build because the app correctly emits `.next`, not a `public` build artifact.
+
 Notes:
 
 - The web apps import shared source from `codex_bms/packages`, so `externalDir` and `outputFileTracingRoot` are enabled in each Next config.
