@@ -1,7 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { authorizeOrThrow } from "../../../../../../packages/auth/src/server/index.ts";
+import { authorizeOrThrow } from "../../../../../packages/auth/src/server/index.ts";
 import {
   getIntakeRuntime,
   getPermissionKeyForReviewAction,
@@ -9,8 +9,8 @@ import {
   parseProjectRequestReviewActionFormData,
   ReviewActionParseError,
   toProjectRequestResourceRecord
-} from "../../../../../../packages/crm/src/index.ts";
-import { getDashboardActor } from "../../../../lib/shell-data.ts";
+} from "../../../../../packages/crm/src/index.ts";
+import { getDashboardActor } from "../../../lib/shell-data.ts";
 
 export async function applyProjectRequestReviewAction(formData: FormData): Promise<never> {
   const requestId = typeof formData.get("requestId") === "string" ? String(formData.get("requestId")).trim() : "";

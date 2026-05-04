@@ -14,6 +14,10 @@ import {
 } from "../../../packages/payroll/src/index.ts";
 import { getDashboardActor } from "./shell-data.ts";
 
+function isPresent<T>(value: T | null | undefined): value is T {
+  return value != null;
+}
+
 function formatMinutes(minutes: number): string {
   const hours = Math.floor(minutes / 60);
   const remainder = minutes % 60;
@@ -35,7 +39,7 @@ export async function getDashboardPayrollHomeData() {
   const activeSession = getActiveClockSessionForActor(runtime, actor);
   const liveSessions = [...new Set(visibleTimesheets.map((timesheet) => timesheet.employeeUserId))]
     .map((employeeUserId) => runtime.service.getActiveClockSession(employeeUserId))
-    .filter((session) => Boolean(session));
+    .filter(isPresent);
   const auditRecords = (
     await Promise.all(visibleTimesheets.map((timesheet) => getTimesheetDetailForActor(runtime, actor, timesheet.id)))
   )

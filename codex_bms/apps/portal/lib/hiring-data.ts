@@ -10,6 +10,10 @@ import {
 import type { AuthorizationActor } from "../../../packages/types/src/index.ts";
 import { getPortalActor, getPortalPrimaryRole } from "./shell-data.ts";
 
+function isPresent<T>(value: T | null | undefined): value is T {
+  return value != null;
+}
+
 function isApplicant(actor: AuthorizationActor): boolean {
   return getPortalPrimaryRole(actor) === "applicant";
 }
@@ -76,5 +80,5 @@ export async function getApplicantOnboardingData(actor: AuthorizationActor = get
     })
   );
 
-  return checklists.filter(Boolean);
+  return checklists.filter(isPresent);
 }

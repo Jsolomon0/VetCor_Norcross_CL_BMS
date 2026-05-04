@@ -1,4 +1,4 @@
-import { createPathAccessMiddleware } from "../../packages/auth/src/server/index.ts";
+import { createPathAccessMiddleware } from "../../packages/auth/src/server/middleware.ts";
 import { DASHBOARD_PROTECTED_ROUTES } from "../../packages/auth/src/shared/index.ts";
 import type { AuthorizationActor, RoleKey } from "../../packages/types/src/index.ts";
 import { NextResponse, type NextRequest } from "next/server";
@@ -42,6 +42,11 @@ function buildDashboardActor(role: RoleKey): AuthorizationActor {
   };
 }
 
+function resolveIpAddress(request: NextRequest): string | undefined {
+  const forwardedFor = request.headers.get("x-forwarded-for");
+  return forwardedFor?.split(",")[0]?.trim() || undefined;
+}
+
 export function middleware(request: NextRequest) {
   const role = resolveDashboardRole(
     request.headers.get("x-bms-demo-role") ??
@@ -51,7 +56,7 @@ export function middleware(request: NextRequest) {
   const outcome = dashboardMiddleware({
     pathname: request.nextUrl.pathname,
     actor: buildDashboardActor(role),
-    ipAddress: request.ip ?? null
+    ipAddress: resolveIpAddress(request)
   });
 
   if (outcome.allowed) {

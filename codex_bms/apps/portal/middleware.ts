@@ -1,4 +1,4 @@
-import { createPathAccessMiddleware } from "../../packages/auth/src/server/index.ts";
+import { createPathAccessMiddleware } from "../../packages/auth/src/server/middleware.ts";
 import { PORTAL_PROTECTED_ROUTES } from "../../packages/auth/src/shared/index.ts";
 import type { AuthorizationActor, RoleKey } from "../../packages/types/src/index.ts";
 import { NextResponse, type NextRequest } from "next/server";
@@ -82,6 +82,11 @@ function buildPortalActor(role: RoleKey): AuthorizationActor {
   };
 }
 
+function resolveIpAddress(request: NextRequest): string | undefined {
+  const forwardedFor = request.headers.get("x-forwarded-for");
+  return forwardedFor?.split(",")[0]?.trim() || undefined;
+}
+
 export function middleware(request: NextRequest) {
   const role = resolvePortalRole(
     request.headers.get("x-bms-demo-role") ?? request.cookies.get("bms_demo_role")?.value ?? process.env.PORTAL_DEMO_ROLE
@@ -89,7 +94,7 @@ export function middleware(request: NextRequest) {
   const outcome = portalMiddleware({
     pathname: request.nextUrl.pathname,
     actor: buildPortalActor(role),
-    ipAddress: request.ip ?? null
+    ipAddress: resolveIpAddress(request)
   });
 
   if (outcome.allowed) {

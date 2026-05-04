@@ -8,6 +8,24 @@ import type {
   ShellUserSummary
 } from "../../../types/src/index.ts";
 
+type CardSpan = "4" | "6" | "8" | "12";
+
+function cardSpanClass(span: CardSpan): string {
+  if (span === "4") {
+    return "bms-card--span-4";
+  }
+
+  if (span === "6") {
+    return "bms-card--span-6";
+  }
+
+  if (span === "8") {
+    return "bms-card--span-8";
+  }
+
+  return "bms-card--span-12";
+}
+
 function groupNavigation(items: readonly AppNavigationItem[]) {
   const groups = new Map<string, AppNavigationItem[]>();
 
@@ -232,10 +250,10 @@ export function StatsCard({
   title: string;
   description: string;
   stats: readonly ModuleSummaryItem[];
-  span?: "8" | "4";
+  span?: CardSpan;
 }) {
   return (
-    <section className={`bms-card ${span === "8" ? "bms-card--span-8" : "bms-card--span-4"}`}>
+    <section className={`bms-card ${cardSpanClass(span)}`}>
       <h2 className="bms-card__title">{title}</h2>
       <p className="bms-card__description">{description}</p>
       <div className="bms-stats" style={{ marginTop: 18 }}>
@@ -284,10 +302,10 @@ export function NotificationCenter({
   title: string;
   description: string;
   notifications: readonly NotificationPreview[];
-  span?: "8" | "4";
+  span?: CardSpan;
 }) {
   return (
-    <section className={`bms-card ${span === "8" ? "bms-card--span-8" : "bms-card--span-4"}`}>
+    <section className={`bms-card ${cardSpanClass(span)}`}>
       <h2 className="bms-card__title">{title}</h2>
       <p className="bms-card__description">{description}</p>
       <ul className="bms-list" style={{ marginTop: 18 }}>
@@ -362,10 +380,10 @@ export function SimpleList({
   title: string;
   description: string;
   items: readonly { title: string; body: string; meta?: string }[];
-  span?: "8" | "4";
+  span?: CardSpan;
 }) {
   return (
-    <section className={`bms-card ${span === "8" ? "bms-card--span-8" : "bms-card--span-4"}`}>
+    <section className={`bms-card ${cardSpanClass(span)}`}>
       <h2 className="bms-card__title">{title}</h2>
       <p className="bms-card__description">{description}</p>
       <ul className="bms-list" style={{ marginTop: 18 }}>
@@ -420,10 +438,10 @@ export function KeyValueSummary({
   title: string;
   description: string;
   items: readonly { label: string; value: string }[];
-  span?: "8" | "4";
+  span?: CardSpan;
 }) {
   return (
-    <section className={`bms-card ${span === "8" ? "bms-card--span-8" : "bms-card--span-4"}`}>
+    <section className={`bms-card ${cardSpanClass(span)}`}>
       <h2 className="bms-card__title">{title}</h2>
       <p className="bms-card__description">{description}</p>
       <div className="bms-kv-grid" style={{ marginTop: 18 }}>

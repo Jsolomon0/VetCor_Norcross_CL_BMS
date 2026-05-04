@@ -147,8 +147,6 @@ export async function getPortalHomeData(actor: AuthorizationActor = getPortalAct
       { label: "Outstanding", value: formatCurrency(finance.stats.outstandingCents) },
       { label: "Pending approvals", value: String(approvals.pending.length) }
     );
-  } else if (role === "applicant") {
-    stats.push({ label: "Hiring scope", value: "Self only" });
   } else {
     stats.push({ label: "Partner scope", value: role === "subcontractor" ? "Assigned" : "Managed" });
   }
@@ -170,18 +168,14 @@ export async function getPortalHomeData(actor: AuthorizationActor = getPortalAct
       },
       {
         title:
-          role === "applicant"
-            ? "Hiring records only"
-            : role === "customer"
-              ? `${finance.invoices.length} invoice${finance.invoices.length === 1 ? "" : "s"} published`
-              : `${documents.length} document${documents.length === 1 ? "" : "s"} shared`,
+          role === "customer"
+            ? `${finance.invoices.length} invoice${finance.invoices.length === 1 ? "" : "s"} published`
+            : `${documents.length} document${documents.length === 1 ? "" : "s"} shared`,
         body:
           role === "customer"
             ? "Finance remains read-safe while payments stay server-authorized."
-            : role === "applicant"
-              ? "Applicant users never receive project, finance, customer, or internal-admin records."
-              : "Files remain limited to the actor's partner-visible records.",
-        meta: role === "customer" ? "Finance" : role === "applicant" ? "Hiring" : "Documents"
+            : "Files remain limited to the actor's partner-visible records.",
+        meta: role === "customer" ? "Finance" : "Documents"
       }
     ],
     notifications: notifications.notifications

@@ -273,8 +273,16 @@ select {
   grid-column: span 8;
 }
 
+.bms-card--span-6 {
+  grid-column: span 6;
+}
+
 .bms-card--span-4 {
   grid-column: span 4;
+}
+
+.bms-card--span-12 {
+  grid-column: span 12;
 }
 
 .bms-card__title {
@@ -558,7 +566,9 @@ select {
   }
 
   .bms-card--span-8,
-  .bms-card--span-4 {
+  .bms-card--span-6,
+  .bms-card--span-4,
+  .bms-card--span-12 {
     grid-column: span 12;
   }
 
