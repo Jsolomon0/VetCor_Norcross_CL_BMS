@@ -1,5 +1,5 @@
-import type { BmsMobileApiClient } from "../../../../packages/api-client/src/index.ts";
-import type { MobileSession, MobileSignInInput } from "../../../../packages/types/src/index.ts";
+import type { BmsMobileApiClient } from "../../../packages/api-client/src/index.ts";
+import type { MobileSession, MobileSignInInput } from "../../../packages/types/src/index.ts";
 import type { MobileKeyValueStorage } from "./storage.ts";
 
 export interface MobileAuthState {

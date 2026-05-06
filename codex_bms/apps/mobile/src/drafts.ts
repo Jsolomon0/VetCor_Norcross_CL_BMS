@@ -1,4 +1,4 @@
-import type { BmsMobileApiClient } from "../../../../packages/api-client/src/index.ts";
+import type { BmsMobileApiClient } from "../../../packages/api-client/src/index.ts";
 import type {
   MobileCustomerRequestDraftPayload,
   MobileDraftRecord,
@@ -6,7 +6,7 @@ import type {
   MobileProjectProgressDraftPayload,
   MobileSession,
   PublicProjectRequestSubmissionInput
-} from "../../../../packages/types/src/index.ts";
+} from "../../../packages/types/src/index.ts";
 import type { MobileKeyValueStorage } from "./storage.ts";
 
 export class PersistentMobileDraftStore {

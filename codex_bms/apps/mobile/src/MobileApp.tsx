@@ -10,7 +10,7 @@ import {
   View
 } from "react-native";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import { createBmsMobileApiClient } from "../../../../packages/api-client/src/index.ts";
+import { createBmsMobileApiClient } from "../../../packages/api-client/src/index.ts";
 import type {
   MobileDraftAttachment,
   MobileHomeModel,
@@ -19,7 +19,7 @@ import type {
   NotificationPreview,
   ProjectDetail,
   ProjectRecord
-} from "../../../../packages/types/src/index.ts";
+} from "../../../packages/types/src/index.ts";
 import { PersistentMobileDraftStore } from "./drafts.ts";
 import { MobilePushController } from "./push.ts";
 import { MobileSessionController } from "./session.ts";

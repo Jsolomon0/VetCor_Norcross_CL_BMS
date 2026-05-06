@@ -1,5 +1,5 @@
-import type { BmsMobileApiClient } from "../../../../packages/api-client/src/index.ts";
-import type { MobilePushRegistration, MobileSession } from "../../../../packages/types/src/index.ts";
+import type { BmsMobileApiClient } from "../../../packages/api-client/src/index.ts";
+import type { MobilePushRegistration, MobileSession } from "../../../packages/types/src/index.ts";
 
 export class MobilePushController {
   private readonly apiClient: BmsMobileApiClient;

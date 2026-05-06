@@ -6,8 +6,11 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "lint": "node ../../scripts/workspace-task.mjs noop",
     "start": "next start",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node ../../scripts/workspace-task.mjs noop",
+    "clean": "node ../../scripts/workspace-task.mjs clean"
   },
   "dependencies": {
     "next": "^15.0.0",

@@ -1,0 +1,7 @@
+.turbo/
+.next/
+apps/*/.next/
+node_modules/
+dist/
+build/
+*.tsbuildinfo

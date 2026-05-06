@@ -17,17 +17,19 @@
         "name": "next"
       }
     ],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "allowJs": true
   },
   "include": [
-    "next-env.d.ts",
+    "../../packages/**/*.ts",
+    "../../packages/**/*.tsx",
     "app/**/*.ts",
     "app/**/*.tsx",
     "lib/**/*.ts",
     "lib/**/*.tsx",
     "middleware.ts",
-    "../../packages/**/*.ts",
-    "../../packages/**/*.tsx"
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
