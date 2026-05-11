@@ -87,7 +87,7 @@ function resolveIpAddress(request: NextRequest): string | undefined {
   return forwardedFor?.split(",")[0]?.trim() || undefined;
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const role = resolvePortalRole(
     request.headers.get("x-bms-demo-role") ?? request.cookies.get("bms_demo_role")?.value ?? process.env.PORTAL_DEMO_ROLE
   );

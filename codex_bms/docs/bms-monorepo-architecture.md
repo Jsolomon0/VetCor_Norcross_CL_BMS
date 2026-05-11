@@ -26,7 +26,7 @@ bms/
 |  |  +- public/
 |  |  +- styles/
 |  |  +- env.ts
-|  |  +- middleware.ts
+|  |  +- proxy.ts
 |  |  +- next.config.mjs
 |  |  +- package.json
 |  |  \- tsconfig.json
@@ -37,7 +37,7 @@ bms/
 |  |  +- server/
 |  |  +- styles/
 |  |  +- env.ts
-|  |  +- middleware.ts
+|  |  +- proxy.ts
 |  |  +- next.config.mjs
 |  |  +- package.json
 |  |  \- tsconfig.json
@@ -48,7 +48,7 @@ bms/
 |  |  +- server/
 |  |  +- styles/
 |  |  +- env.ts
-|  |  +- middleware.ts
+|  |  +- proxy.ts
 |  |  +- next.config.mjs
 |  |  +- package.json
 |  |  \- tsconfig.json

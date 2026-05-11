@@ -16,8 +16,8 @@ This document maps the implemented authorization foundation to the required deli
 4. Route protection patterns
    - [packages/auth/src/server/route-protection.ts](</C:/Users/JOHN ALYN/bms/codex_bms/packages/auth/src/server/route-protection.ts:1>)
 5. Sample middleware
-   - [apps/dashboard/middleware.ts](</C:/Users/JOHN ALYN/bms/codex_bms/apps/dashboard/middleware.ts:1>)
-   - [apps/portal/middleware.ts](</C:/Users/JOHN ALYN/bms/codex_bms/apps/portal/middleware.ts:1>)
+   - [apps/dashboard/proxy.ts](</C:/Users/JOHN ALYN/bms/codex_bms/apps/dashboard/proxy.ts:1>)
+   - [apps/portal/proxy.ts](</C:/Users/JOHN ALYN/bms/codex_bms/apps/portal/proxy.ts:1>)
 6. Authorization edge-case tests
    - [tests/authorization.test.ts](</C:/Users/JOHN ALYN/bms/codex_bms/tests/authorization.test.ts:1>)
 
