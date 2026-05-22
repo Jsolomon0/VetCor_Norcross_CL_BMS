@@ -300,41 +300,41 @@ export const WEBSITE_NAVIGATION = [
   item({
     id: "website-home",
     app: "website",
-    label: "Platform",
+    label: "Home",
     href: "/",
-    description: "Product overview",
+    description: "VetCor of Norcross — 24/7 emergency restoration",
     group: "engage"
   }),
   item({
     id: "website-solutions",
     app: "website",
-    label: "Solutions",
+    label: "Services",
     href: "/solutions",
-    description: "Workflow snapshots",
+    description: "All restoration and remediation services",
     group: "engage"
   }),
   item({
     id: "website-access",
     app: "website",
-    label: "Access",
+    label: "Client Login",
     href: "/access",
-    description: "Dashboard and portal entry points",
+    description: "Portal and team access",
     group: "engage"
   }),
   item({
     id: "website-request",
     app: "website",
-    label: "Request Project",
+    label: "Request Service",
     href: "/request",
-    description: "Public intake for short-term customer requests",
+    description: "Submit a restoration service request",
     group: "engage"
   }),
   item({
     id: "website-careers",
     app: "website",
-    label: "Careers",
+    label: "Join Our Team",
     href: "/careers",
-    description: "Public job board and applications",
+    description: "Career opportunities with VetCor of Norcross",
     group: "engage"
   })
 ] as const;

@@ -171,18 +171,23 @@ export function AppShellFrame({
 
 export function MarketingShell({
   brand,
+  eyebrow,
+  tagline,
   navigation,
   children
 }: PropsWithChildren<{
   brand: string;
+  eyebrow?: string;
+  tagline?: string;
   navigation: readonly AppNavigationItem[];
 }>) {
   return (
     <div>
       <header className="bms-site-header">
-        <div>
-          <div className="bms-sidebar__eyebrow">BMS Platform</div>
+        <div className="bms-site-header__brand">
+          {eyebrow && <div className="bms-sidebar__eyebrow">{eyebrow}</div>}
           <div className="bms-sidebar__title">{brand}</div>
+          {tagline && <div className="bms-site-header__tagline">{tagline}</div>}
         </div>
         <nav className="bms-site-nav">
           {navigation.map((item) => (

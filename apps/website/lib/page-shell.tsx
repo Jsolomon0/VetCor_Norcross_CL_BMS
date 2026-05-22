@@ -5,5 +5,5 @@ import { getWebsiteShellModel } from "./shell-data.ts";
 export function WebsitePageShell({ children }: PropsWithChildren) {
   const model = getWebsiteShellModel();
 
-  return <MarketingShell brand="Builder Management System" navigation={model.navigation}>{children}</MarketingShell>;
+  return <MarketingShell brand="VetCor of Norcross" eyebrow="24/7 Emergency Restoration · IICRC Certified" tagline="Tell 'Em You Want the Vets!" navigation={model.navigation}>{children}</MarketingShell>;
 }

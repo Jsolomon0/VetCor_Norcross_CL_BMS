@@ -40,7 +40,7 @@ function getSubmissionAlert(searchParams?: {
   if (searchParams?.error === "submission") {
     return {
       title: "Submission did not complete",
-      body: "The request workflow rejected the submission. Retry after reviewing the input rules.",
+      body: "The request could not be submitted. Please review your information and try again, or call 1-844-VETCOR1 for immediate assistance.",
       meta: "Retry needed"
     };
   }
@@ -62,20 +62,20 @@ export default async function WebsiteRequestPage({
   return (
     <WebsitePageShell>
       <PageHeader
-        eyebrow="Public intake"
-        title="Start a project request as a short-term customer."
-        description="This form records the minimum required intake profile: name and email are required, an image upload is optional, and consultation preference is captured up front."
+        eyebrow="Request Service"
+        title="Tell us about your restoration emergency."
+        description="Fill out the form below and a VetCor specialist will respond as quickly as possible. For immediate 24/7 emergency response, call 1-844-VETCOR1 (838-2671). Office hours: Mon–Fri, 9am–5pm at (770) 455-2343."
         actions={[
-          { label: "Review access paths", href: "/access" },
-          { label: "Return home", href: "/" }
+          { label: "Call Emergency Line: 1-844-VETCOR1", href: "tel:18448382671" },
+          { label: "Return Home", href: "/" }
         ]}
-        badges={["Name + email required", "Optional image upload", "Short-term restrictions apply"]}
+        badges={["24/7 Emergency Line Available", "IICRC Certified Technicians", "Veteran-Owned"]}
       />
       <SectionGrid>
         <div style={{ gridColumn: "span 8" }}>
           <FormCard
-            title="Project request form"
-            description="Submissions flow into the shared intake workflow service, create a short-term customer request record, and trigger review notifications."
+            title="Service request form"
+            description="Describe your restoration emergency. Our IICRC-certified technicians will contact you promptly. For life-threatening emergencies, call 911 first."
           >
             {submissionAlert ? (
               <div className="bms-form-note" style={{ marginBottom: 18 }}>
@@ -86,49 +86,49 @@ export default async function WebsiteRequestPage({
               <FormGrid>
                 <TextField label="Full name" name="submitterName" placeholder="Jordan Reed" required span="6" />
                 <TextField label="Email address" name="email" placeholder="jordan@example.com" required type="email" span="6" />
-                <TextField label="Phone number" name="phone" placeholder="Optional" type="tel" span="6" />
-                <TextField label="Project title" name="projectTitle" placeholder="Kitchen and entry remodel" required span="6" />
+                <TextField label="Phone number" name="phone" placeholder="(770) 000-0000" type="tel" span="6" />
+                <TextField label="Property / damage type" name="projectTitle" placeholder="Water damage in basement" required span="6" />
                 <TextAreaField
-                  label="Project summary"
+                  label="Describe the damage"
                   name="projectSummary"
-                  placeholder="Describe scope, timeline pressure, and anything the review team should know."
+                  placeholder="Describe the type of damage, the affected area, when it occurred, and any immediate safety concerns. The more detail you provide, the faster we can respond."
                   required
                 />
-                <SelectField label="Consultation preference" name="consultationPreference" options={consultationOptions} defaultValue="within_7_days" />
+                <SelectField label="When do you need service?" name="consultationPreference" options={consultationOptions} defaultValue="within_7_days" />
                 <FileField
-                  label="Optional reference image"
+                  label="Optional damage photo"
                   name="imageUpload"
-                  note="A single reference image can be attached for intake review."
+                  note="Attach a photo of the affected area to help our team prepare for your job."
                   rules={uploadRules}
                 />
               </FormGrid>
               <div className="bms-actions">
                 <button className="bms-button bms-button--primary" type="submit">
-                  Submit request
+                  Submit Service Request
                 </button>
-                <a className="bms-button bms-button--secondary" href="/access">
-                  View access options
+                <a className="bms-button bms-button--secondary" href="/">
+                  Return Home
                 </a>
               </div>
             </form>
           </FormCard>
         </div>
         <KeyValueSummary
-          title="Submission rules"
-          description="These rules match the validation and retention posture enforced by the intake workflow."
+          title="What to expect"
+          description="Once submitted, your request goes directly to our VetCor team for review and rapid response."
           items={[
-            { label: "Customer type", value: "Short-term" },
-            { label: "Required identity", value: "Name and email" },
-            { label: "Upload rule", value: "Validated image only" },
-            { label: "Retention posture", value: "Records retained when required" }
+            { label: "Emergency line", value: "1-844-VETCOR1" },
+            { label: "Office line", value: "(770) 455-2343" },
+            { label: "Certification", value: "IICRC Certified" },
+            { label: "Emergency coverage", value: "24/7" }
           ]}
           span="4"
         />
         <SimpleList
-          title="Short-term restrictions"
-          description="Submitting this form does not create a long-term customer account."
+          title="Submission guidelines"
+          description="Submitting this form does not create a long-term account."
           items={restrictionLabels.map((label, index) => ({
-            title: `Restriction ${index + 1}`,
+            title: `Note ${index + 1}`,
             body: label
           }))}
           span="4"
