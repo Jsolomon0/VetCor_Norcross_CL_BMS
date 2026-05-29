@@ -2,10 +2,11 @@ import { SERVICES, SITE } from "../lib/siteConfig.ts";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/solutions" },
+  { label: "Services", href: "/#services" },
+  { label: "Service Areas", href: "/#service-areas" },
+  { label: "Referral Program", href: "/#referral" },
   { label: "Request Service", href: "/request" },
-  { label: "Client Login", href: "/access" },
-  { label: "Join Our Team", href: "/careers" }
+  { label: "Careers", href: "/careers" }
 ];
 
 export function SiteFooter() {
@@ -88,7 +89,7 @@ export function SiteFooter() {
 
         <div className="vc-footer__bottom">
           <span>© {year} {SITE.name}. All rights reserved.</span>
-          <span>Serving {SITE.coverageShort}</span>
+          <span>Veteran-Owned · IICRC Certified · Serving {SITE.coverageShort}</span>
         </div>
       </div>
     </footer>

@@ -2,32 +2,32 @@ const WHY_CARDS = [
   {
     icon: "🎖️",
     title: "Military Discipline & Accountability",
-    body: "Founded and operated by veterans who bring the same integrity, discipline, and mission-first mindset to every restoration job."
+    body: "Founded and operated by veterans who bring the same integrity, discipline, and mission-first mindset to every restoration job — from first call to final walk-through."
   },
   {
     icon: "📋",
     title: "IICRC Certified Technicians",
-    body: "Our team holds Institute of Inspection Cleaning and Restoration Certification — the industry gold standard for restoration professionals."
+    body: "Our team holds Institute of Inspection Cleaning and Restoration Certification — the industry gold standard. Every job follows proven, documented restoration protocols."
   },
   {
     icon: "⏱️",
     title: "24/7 Rapid Emergency Response",
-    body: "Disasters don't wait for business hours. We're available around the clock, every day, to respond and begin mitigation immediately."
+    body: "Disasters don't wait for business hours. We're available around the clock to respond, dispatch a crew, and begin mitigation — because time directly affects damage severity."
   },
   {
     icon: "📄",
-    title: "Insurance Claim Assistance",
-    body: "We document damage thoroughly and work directly with your insurance provider to help ensure your claim is properly supported."
+    title: "Documentation-First Process",
+    body: "We photograph, measure, and document every stage of damage and restoration. Thorough records support your insurance claim and protect your property records."
   },
   {
-    icon: "✅",
-    title: "100% Satisfaction Commitment",
-    body: "We don't consider a job done until you're satisfied. Our mission isn't complete until your property is fully restored."
+    icon: "🤝",
+    title: "Respect for Property & Privacy",
+    body: "We treat every home, business, and facility with care and professionalism. Tenants, owners, and facility managers can count on clear communication and clean jobsites."
   },
   {
     icon: "🏢",
-    title: "All Property Types",
-    body: "Residential homes, commercial buildings, and industrial facilities — we have the equipment and expertise for jobs of any scale."
+    title: "All Property Types & Scales",
+    body: "Residential homes, commercial buildings, and industrial facilities — we have the equipment, certifications, and crew capacity for jobs of any size."
   }
 ];
 
@@ -40,8 +40,9 @@ export function WhyVetCor() {
           Restoration Built on Military Standards
         </h2>
         <p className="vc-section-desc">
-          We're not just another restoration company. We're veterans who apply the same discipline and
-          commitment to every job that we brought to serving our country.
+          We&apos;re not just another restoration company. We&apos;re veterans who bring the same discipline,
+          accountability, and mission-first commitment to every restoration job that we brought to serving
+          our country.
         </p>
         <div className="vc-why__grid">
           {WHY_CARDS.map((card) => (

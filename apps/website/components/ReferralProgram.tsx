@@ -2,7 +2,7 @@ import { SITE } from "../lib/siteConfig.ts";
 
 export function ReferralProgram() {
   return (
-    <section className="vc-section vc-referral vc-section--dark" aria-labelledby="referral-heading">
+    <section id="referral" className="vc-section vc-referral vc-section--dark" aria-labelledby="referral-heading">
       <div className="vc-container">
         <div className="vc-referral__inner">
           <div>

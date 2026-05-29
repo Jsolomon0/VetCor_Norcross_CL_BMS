@@ -2,7 +2,7 @@ import { SITE } from "../lib/siteConfig.ts";
 
 export function ServiceArea() {
   return (
-    <section className="vc-section vc-service-area" aria-labelledby="area-heading">
+    <section id="service-areas" className="vc-section vc-service-area" aria-labelledby="area-heading">
       <div className="vc-container">
         <div className="vc-service-area__layout">
           <div>

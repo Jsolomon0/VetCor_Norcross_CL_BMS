@@ -4,11 +4,10 @@ import { useState } from "react";
 import { SITE } from "../lib/siteConfig.ts";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/solutions" },
-  { label: "Client Login", href: "/access" },
-  { label: "Request Service", href: "/request" },
-  { label: "Join Our Team", href: "/careers" }
+  { label: "Services", href: "/#services" },
+  { label: "Service Areas", href: "/#service-areas" },
+  { label: "Referral Program", href: "/#referral" },
+  { label: "Contact", href: "/request" }
 ];
 
 export function EmergencyHeader() {
@@ -34,8 +33,13 @@ export function EmergencyHeader() {
           </nav>
 
           <div className="vc-header__actions">
-            <a href={SITE.phone.emergencyTel} className="vc-header__tel" aria-label={`Call emergency line: ${SITE.phone.emergency}`}>
-              {SITE.phone.emergency}
+            <a
+              href={SITE.phone.emergencyTel}
+              className="vc-header__tel-block"
+              aria-label={`24/7 Emergency Line: ${SITE.phone.emergencyDisplay}`}
+            >
+              <span className="vc-header__tel-label">24/7 Emergency Line</span>
+              <span className="vc-header__tel-number">{SITE.phone.emergency}</span>
             </a>
             <a href="/request" className="vc-btn vc-btn--emergency vc-btn--sm">
               Request Service
@@ -70,10 +74,10 @@ export function EmergencyHeader() {
         <div className="vc-header__drawer-divider" />
         <div className="vc-header__drawer-cta">
           <a href={SITE.phone.emergencyTel} className="vc-btn vc-btn--emergency" onClick={() => setOpen(false)}>
-            Call {SITE.phone.emergency}
+            ☎ Call 24/7 Emergency: {SITE.phone.emergency}
           </a>
           <a href="/request" className="vc-btn vc-btn--outline-white" onClick={() => setOpen(false)}>
-            Request Service
+            Request Service Online
           </a>
         </div>
       </nav>

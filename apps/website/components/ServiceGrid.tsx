@@ -2,7 +2,7 @@ import { SERVICES } from "../lib/siteConfig.ts";
 
 export function ServiceGrid() {
   return (
-    <section className="vc-section vc-services" aria-labelledby="services-heading">
+    <section id="services" className="vc-section vc-services" aria-labelledby="services-heading">
       <div className="vc-container">
         <span className="vc-section-eyebrow">What We Do</span>
         <h2 className="vc-section-title" id="services-heading">

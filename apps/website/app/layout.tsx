@@ -109,7 +109,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <body>
-        <a href="#main-content" className="vc-visually-hidden" style={{ position: "absolute", left: "-9999px" }}>
+        <a href="#main-content" className="vc-skip-link">
           Skip to main content
         </a>
         {children}
